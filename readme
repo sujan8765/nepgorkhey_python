@@ -1,0 +1,35 @@
+file_conversion.py
+converts file from fasta ('.fas') to nexus ('.nex') or vice-versa
+usage: python file_conversion.py {filename_with_extension}
+
+convert_to_single_line_sequences.sh
+bash script that converts a multiline fasta file to single line. For example
+>Contig_1
+AAAATTCCACTTCTGGCGTCTGCTAATGGGCGGGGGGATTACCACCTCGCCTATGCGTGTGCTGTTGCGG
+ACTGCGACGCAGGCCGCGTGACCTGGTGGCCGTCCACGCATGCTCCACGGCAAGCGCGTAGCGCTGCCCG
+TCGCCGTGGGGGATGGGTGTATCCATCCCCAGGCGTCGGGGAAGCGGTGGGGCATGGGTGGGCGGGCCTG
+ACGGTTGCAGCTCGTCCCCGGCTTGTCCACGGGGGCGGCCAACGGCCGACGCTGACCAGGTGGTGCCGTC
+>Contig_2
+TCGCCGTGGGGGATGGGTGTATCCATCCCCAGGCGTCGGGGAAGCGGTGGGGCATGGGTGGGCGGGCCTG
+ACGGTTGCAGCTCGTCCCCGGCTTGTCCACGGGGGCGGCCAACGGCCGACGCTGACCAGGTGGTGCCGTC
+
+is converted to:
+
+>Contig_1
+AAAATTCCACTTCTGGCGTCTGCTAATGGGCGGGGGGATTACCACCTCGCCTATGCGTGTGCTGTTGCGGACTGCGACGCAGGCCGCGTGACCTGGTGGCCGTCCACGCATGCTCCACGGCAAGCGCGTAGCGCTGCCCGTCGCCGTGGGGGATGGGTGTATCCATCCCCAGGCGTCGGGGAAGCGGTGGGGCATGGGTGGGCGGGCCTGACGGTTGCAGCTCGTCCCCGGCTTGTCCACGGGGGCGGCCAACGGCCGACGCTGACCAGGTGGTGCCGTC
+>Contig_2
+TCGCCGTGGGGGATGGGTGTATCCATCCCCAGGCGTCGGGGAAGCGGTGGGGCATGGGTGGGCGGGCCTGACGGTTGCAGCTCGTCCCCGGCTTGTCCACGGGGGCGGCCAACGGCCGACGCTGACCAGGTGGTGCCGTC
+
+usage:
+if there are multiple fasta files that you want to change to single line fasta file
+genome1.fasta, genome2.fasta, genome3.fasta
+put them all in a single folder along with this script and run following on your terminal:
+=> bash convert_to_single_line_sequences.sh
+The folder will now have:
+genome1.fasta, genome2.fasta, genome3.fasta, genome1_single_line.fas, genome2_single_line.fas, genome3_single_line.fas
+
+Converting to single line sequences of contigs can be useful to calculate the genome quality like N50, total contig length etc. 
+
+Use genome_qualiity.py script to calculate some basic genome qualities as:
+
+usage: python genome_quality.py {file_converted_to_single_lines}
