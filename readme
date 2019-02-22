@@ -1,3 +1,6 @@
+The codes are compiled together various sources to make it useful for the data I am analyzing. Used exclusively for bacterial
+genome sequences and generate inputs for different software. 
+
 file_conversion.py
 converts file from fasta ('.fas') to nexus ('.nex') or vice-versa
 usage: python file_conversion.py {filename_with_extension}
