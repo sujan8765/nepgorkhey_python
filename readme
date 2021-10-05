@@ -3,7 +3,7 @@ genome sequences and generate inputs for different software.
 
 file_conversion.py
 converts file from fasta ('.fas') to nexus ('.nex') or vice-versa
-usage: python file_conversion.py {filename_with_extension}
+usage: python file_conversion.py {filename_with_extension} #(testing changes)
 
 convert_to_single_line_sequences.sh
 bash script that converts a multiline fasta file to single line. For example
